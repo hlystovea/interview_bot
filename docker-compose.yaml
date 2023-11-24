@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  bot:
+    build: .
+    container_name: interview_bot
+    restart: unless-stopped
+    command: npm start
+    env_file:
+      - ./.env
+
+networks:
+  default:
+    name: interview_network
+    driver: bridge
